@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Fancy & Gift Shop | Murlipura, Jaipur</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    .font-serif-display { font-family: 'Playfair Display', serif; }
+    .hero-bg {
+      background: radial-gradient(circle at top right, #be123c 0%, #881337 45%, #4c0519 100%);
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .product-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -10px rgba(136, 19, 55, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-slate-800">
+
+  <!-- Top Trust & Offer Strip -->
+  <div class="bg-amber-400 text-rose-950 text-xs sm:text-sm font-bold py-2 px-4 text-center flex flex-wrap items-center justify-center gap-2">
+    <span>🎉 Free Gift Wrapping on Every Order</span>
+    <span class="hidden sm:inline">•</span>
+    <span>⚡ Same-Day Pickup & Local Delivery in Murlipura, Jaipur</span>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-rose-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="font-serif-display text-lg sm:text-2xl font-extrabold text-rose-900 leading-none">
+            Welcome Fancy & Gift Shop
+          </h1>
+          <span class="hidden md:inline-block bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">OPEN NOW</span>
+        </div>
+        <p class="text-[11px] sm:text-xs text-slate-500 mt-1">
+          📍 Shop A-46, Murlipura, Jaipur – 302039
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="tel:+919079194283" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-rose-200 text-rose-900 text-xs sm:text-sm font-bold hover:bg-rose-50 transition">
+          📞 +91 90791 94283
+        </a>
+        <button onclick="toggleCart()" class="relative inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-900 hover:bg-rose-800 text-white text-xs sm:text-sm font-bold shadow transition">
+          <span>🛍️ Gift Bag</span>
+          <span id="cart-count" class="bg-amber-400 text-rose-950 text-xs font-extrabold px-1.5 py-0.2 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Smart Gift Finder -->
+  <section class="hero-bg text-white py-12 sm:py-16 px-4">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Left Copy -->
+      <div class="lg:col-span-7 space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-amber-300 text-xs font-semibold">
+          <span>⭐ 4.9 Rated Gift & Fancy Store in Murlipura</span>
+        </div>
+        <h2 class="font-serif-display text-3xl sm:text-5xl font-extrabold leading-tight">
+          Jaipur’s Favourite Store for <span class="text-amber-300">Gifts, Fancy Items & Party Decor</span>
+        </h2>
+        <p class="text-rose-100 text-sm sm:text-base max-w-xl leading-relaxed">
+          Last-minute birthday surprise, anniversary gift, kids toys, ya ghar ki party decoration — select karein aur seedha WhatsApp par book karein.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-1">
+          <a href="#gallery" class="gold-btn text-rose-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg hover:opacity-95 transition text-sm">
+            Browse Gift Gallery ↓
+          </a>
+          <a href="#decoration" class="bg-white/15 hover:bg-white/25 border border-white/25 text-white font-bold px-6 py-3.5 rounded-xl transition text-sm">
+            🎈 Birthday Combos
+          </a>
+        </div>
+        <div class="grid grid-cols-3 gap-3 pt-4 border-t border-white/15 max-w-lg text-center sm:text-left">
+          <div>
+            <p class="text-lg sm:text-xl font-extrabold text-amber-300">500+</p>
+            <p class="text-[11px] text-rose-200">Unique Gift Items</p>
+          </div>
+          <div>
+            <p class="text-lg sm:text-xl font-extrabold text-amber-300">₹99 se</p>
+            <p class="text-[11px] text-rose-200">Starting Range</p>
+          </div>
+          <div>
+            <p class="text-lg sm:text-xl font-extrabold text-amber-300">10 Min</p>
+            <p class="text-[11px] text-rose-200">Quick Store Pickup</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Smart 10-Second Gift Finder Widget -->
+      <div class="lg:col-span-5">
+        <div class="bg-white text-slate-800 rounded-3xl p-6 shadow-2xl border-2 border-amber-300/60">
+          <div class="flex items-center justify-between mb-3">
+            <span class="bg-rose-100 text-rose-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase">Smart Gift Finder</span>
+            <span class="text-xs text-slate-400 font-semibold">Instant WhatsApp Help</span>
+          </div>
+          <h3 class="font-serif-display text-xl sm:text-2xl font-bold text-slate-900 mb-1">
+            Confused What to Gift?
+          </h3>
+          <p class="text-xs text-slate-500 mb-4">
+            Bas 3 options chunein — hum aapko latest photos WhatsApp par bhej denge!
+          </p>
+
+          <form onsubmit="sendFinderEnquiry(event)" class="space-y-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Kiske Liye Gift Chahiye?</label>
+              <select id="finderFor" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:border-rose-700 bg-slate-50">
+                <option value="Birthday Boy / Girl">🎂 Birthday (Friend / Family)</option>
+                <option value="Kids / Return Gifts">🧸 Kids / Birthday Return Gifts</option>
+                <option value="Husband / Wife / Couple">❤️ Anniversary / Couple Surprise</option>
+                <option value="Home Birthday Decoration">🎈 Home Birthday Decoration Setup</option>
+                <option value="Housewarming / Fancy Decor">✨ Housewarming / Fancy Showpiece</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Budget Range</label>
+                <select id="finderBudget" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:border-rose-700 bg-slate-50">
+                  <option value="Under ₹300">Under ₹300</option>
+                  <option value="₹300 – ₹700" selected>₹300 – ₹700</option>
+                  <option value="₹700 – ₹1,500">₹700 – ₹1,500</option>
+                  <option value="₹1,500+ Premium">₹1,500+ Premium</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Kab Chahiye?</label>
+                <select id="finderTime" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:border-rose-700 bg-slate-50">
+                  <option value="Today (Urgent)">⚡ Aaj Hi Chahiye</option>
+                  <option value="Tomorrow">📅 Kal Chahiye</option>
+                  <option value="This Week">🗓️ Is Hafte</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <input type="text" id="finderName" required placeholder="Aapka Naam (e.g., Rahul Sharma)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-rose-700">
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2">
+              <span>💬 Get Gift Photos on WhatsApp</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift Product Gallery -->
+  <section id="gallery" class="max-w-6xl mx-auto px-4 py-14">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div>
+        <span class="text-rose-700 font-bold text-xs uppercase tracking-wider">Trending in Murlipura</span>
+        <h2 class="font-serif-display text-2xl sm:text-4xl font-bold text-slate-900 mt-1">
+          Gift & Fancy Product Gallery
+        </h2>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-500 max-w-md">
+        Items ko <strong>"+ Add to Bag"</strong> karke ek saath WhatsApp par order karein, ya seedha <strong>"WhatsApp"</strong> par photo mangwayein.
+      </p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      <button onclick="filterProducts('all', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-rose-900 text-white shadow-sm transition">All Items (8)</button>
+      <button onclick="filterProducts('birthday', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-rose-300 transition">🎂 Birthday Gifts</button>
+      <button onclick="filterProducts('couple', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-rose-300 transition">❤️ Couple & Anniversary</button>
+      <button onclick="filterProducts('toys', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-rose-300 transition">🧸 Soft Toys & Kids</button>
+      <button onclick="filterProducts('fancy', this)" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:border-rose-300 transition">✨ Fancy & Decor</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </section>
+
+  <!-- Birthday Decoration Collection -->
+  <section id="decoration" class="bg-rose-950 text-white py-14 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="bg-amber-400/20 text-amber-300 border border-amber-400/30 px-3 py-1 rounded-full text-xs font-bold uppercase">High-Demand Party Kits</span>
+        <h2 class="font-serif-display text-2xl sm:text-4xl font-bold mt-3">
+          Birthday Decoration Collection
+        </h2>
+        <p class="text-rose-200 text-sm mt-2">
+          Ghar par 15 minute mein grand birthday backdrop banayein — sabhi items ready-to-pick उपलब्ध hain.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Pack 1 -->
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Quick Surprise</span>
+              <span class="text-2xl font-extrabold text-white">₹299</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Mini Room Decoration Kit</h3>
+            <ul class="space-y-2 text-sm text-rose-100 my-5">
+              <li>✓ Happy Birthday Foil Banner</li>
+              <li>✓ 30 Metallic & Confetti Balloons</li>
+              <li>✓ Arch Strip, Glue Dots & Ribbon</li>
+              <li>✓ 1 Magic Sparkle Candle Free</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="addToCart('Mini Room Decoration Kit', 299)" class="py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs transition">
+              + Add to Bag
+            </button>
+            <button onclick="directWhatsApp('Mini Room Decoration Kit (₹299)')" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition">
+              💬 Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Pack 2 -->
+        <div class="bg-gradient-to-b from-amber-500/25 to-rose-900/40 border-2 border-amber-400 rounded-3xl p-6 flex flex-col justify-between relative shadow-2xl">
+          <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-rose-950 text-[11px] font-extrabold px-3.5 py-1 rounded-full uppercase">★ Murlipura Bestseller</span>
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Grand Backdrop</span>
+              <span class="text-2xl font-extrabold text-amber-300">₹699</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Theme Birthday Grand Combo</h3>
+            <ul class="space-y-2 text-sm text-rose-100 my-5">
+              <li>✓ 2 Metallic Foil Curtains + LED Fairy Light</li>
+              <li>✓ 50 Chrome & Pastel Balloons + Star Foils</li>
+              <li>✓ Age Number Foil Balloon + Cake Topper</li>
+              <li>✓ Hand Balloon Pump Included</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="addToCart('Theme Birthday Grand Combo', 699)" class="py-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs transition">
+              + Add to Bag
+            </button>
+            <button onclick="directWhatsApp('Theme Birthday Grand Combo (₹699)')" class="py-2.5 rounded-xl gold-btn text-rose-950 font-extrabold text-xs transition">
+              💬 Book Combo
+            </button>
+          </div>
+        </div>
+
+        <!-- Pack 3 -->
+        <div class="glass-card rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Kids Party</span>
+              <span class="text-2xl font-extrabold text-white">₹49<span class="text-xs font-normal">/pc</span></span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Return Gifts & Theme Props</h3>
+            <ul class="space-y-2 text-sm text-rose-100 my-5">
+              <li>✓ Cartoon Geometry Boxes & Water Bottles</li>
+              <li>✓ Mini Soft Toys, Piggy Banks & Games</li>
+              <li>✓ Theme Caps, Eye Masks & Party Poppers</li>
+              <li>✓ Free Gift Wrapping on 10+ Pieces</li>
+            </ul>
+          </div>
+          <button onclick="directWhatsApp('Kids Return Gifts Bulk Enquiry (10+ Pieces)')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition">
+            💬 Ask Bulk Rate on WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Contact & Google Maps Section -->
+  <footer id="contact" class="bg-slate-950 text-slate-300 pt-14 pb-24 sm:pb-12 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
+      
+      <div class="md:col-span-5 space-y-3">
+        <span class="text-amber-400 text-xs font-extrabold uppercase tracking-wider">Visit Us Today</span>
+        <h3 class="font-serif-display text-2xl font-bold text-white">Welcome Fancy & Gift Shop</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Gift & Fancy Store — Murlipura ka trusted destination jahan aapko har budget mein best gifts, fancy items aur party decoration milta hai.
+        </p>
+        <div class="pt-2 space-y-2 text-sm">
+          <p class="text-white font-semibold">📍 Shop A-46, Murlipura, Jaipur – 302039</p>
+          <p class="text-slate-300">📞 <a href="tel:+919079194283" class="hover:text-amber-400 font-bold">+91 90791 94283</a></p>
+          <p class="text-slate-400">🕒 Timing: 10:00 AM – 9:30 PM (All 7 Days)</p>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="text-white font-bold text-base">Direct Customer Support</h4>
+        <p class="text-xs text-slate-400">Stock check karne ya custom gift packing ke liye seedha connect karein:</p>
+        <div class="flex flex-col gap-2.5 pt-1">
+          <a href="https://wa.me/919079194283?text=Hello%20Welcome%20Fancy%20%26%20Gift%20Shop%2C%20I%20want%20to%20enquire%20about%20gifts." target="_blank" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm text-center transition">
+            💬 WhatsApp Chat (+91 90791 94283)
+          </a>
+          <a href="tel:+919079194283" class="py-3 px-4 rounded-xl bg-rose-800 hover:bg-rose-700 text-white font-bold text-sm text-center transition">
+            📞 Call Store Directly
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Shop+A-46+Murlipura+Jaipur+302039" target="_blank" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm text-center border border-slate-700 transition">
+            🗺️ Get Directions (Google Maps)
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-3">
+        <h4 class="text-white font-bold text-base mb-3">Why Shop With Us?</h4>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li class="bg-slate-900 p-3 rounded-xl border border-slate-800">🎁 <strong class="text-slate-200">Free Gift Packing</strong> on selected gifts</li>
+          <li class="bg-slate-900 p-3 rounded-xl border border-slate-800">📸 <strong class="text-slate-200">Live Photo Selection</strong> on WhatsApp</li>
+          <li class="bg-slate-900 p-3 rounded-xl border border-slate-800">🏪 <strong class="text-slate-200">Easy Murlipura Pickup</strong> at Shop A-46</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto pt-6 text-center text-xs text-slate-500">
+      © 2026 Welcome Fancy & Gift Shop (Shop A-46, Murlipura, Jaipur – 302039). All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Slide-Over Gift Bag Drawer -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCart()" class="absolute inset-0 bg-black/60 backdrop-blur-xs"></div>
+    <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col justify-between p-6">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b">
+          <h3 class="font-serif-display text-xl font-bold text-rose-950">🛍️ Your Selected Gift Bag</h3>
+          <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-700 text-xl font-bold">✕</button>
+        </div>
+        <div id="cart-items" class="py-4 space-y-3 max-h-[55vh] overflow-y-auto">
+          <p class="text-sm text-slate-400 text-center py-10">Aapka Gift Bag abhi khaali hai. Gallery se items add karein!</p>
+        </div>
+      </div>
+
+      <div class="border-t pt-4 space-y-3">
+        <div class="flex justify-between text-base font-extrabold text-slate-900">
+          <span>Estimated Total:</span>
+          <span id="cart-total" class="text-rose-800">₹0</span>
+        </div>
+        <p class="text-[11px] text-slate-500">*Final availability & color options WhatsApp par confirm honge.</p>
+        <button onclick="checkoutWhatsApp()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg transition">
+          💬 Send Complete Order on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/919079194283?text=Hello%20Welcome%20Fancy%20%26%20Gift%20Shop%2C%20I%20saw%20your%20online%20store." target="_blank" class="fixed bottom-5 right-5 z-40 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 font-bold text-sm transition hover:scale-105">
+    <span class="text-lg">💬</span>
+    <span>WhatsApp Store</span>
+  </a>
+
+  <script>
+    const PHONE = "919079194283";
+    let cart = [];
+
+    const products = [
+      { id: 1, name: "Luxury Chocolate & Rose Hamper", category: "birthday", tag: "Bestseller", price: 499, img: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80" },
+      { id: 2, name: "Couple LED Photo Lamp Frame", category: "couple", tag: "Anniversary Hit", price: 649, img: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=600&q=80" },
+      { id: 3, name: "Plush 3-Feet Soft Teddy Bear", category: "toys", tag: "Kids Favorite", price: 799, img: "https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=600&q=80" },
+      { id: 4, name: "Golden Swan Couple Showpiece", category: "fancy", tag: "Fancy Decor", price: 449, img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" },
+      { id: 5, name: "Birthday Explosion Surprise Box", category: "birthday", tag: "Trending", price: 599, img: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=600&q=80" },
+      { id: 6, name: "Musical Crystal Snow Globe", category: "couple", tag: "Romantic Gift", price: 399, img: "https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=600&q=80" },
+      { id: 7, name: "RC Stunt Racing Car Toy", category: "toys", tag: "Hot Toy", price: 549, img: "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&w=600&q=80" },
+      { id: 8, name: "Designer Wall Clock & Fancy Vase", category: "fancy", tag: "Home Fancy", price: 699, img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=600&q=80" }
+    ];
+
+    function renderProducts(cat = "all") {
+      const grid = document.getElementById("product-grid");
+      const list = cat === "all" ? products : products.filter(p => p.category === cat);
+      grid.innerHTML = list.map(p => `
+        <div class="bg-white rounded-2xl border border-rose-100 overflow-hidden shadow-sm product-card flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 bg-rose-50">
+              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-rose-950/90 text-amber-300 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">
+                ${p.tag}
+              </span>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base leading-snug">${p.name}</h3>
+              <p class="text-rose-800 font-extrabold text-lg mt-1">₹${p.price} <span class="text-[11px] font-normal text-slate-400">onwards</span></p>
+            </div>
+          </div>
+          <div class="px-4 pb-4 grid grid-cols-2 gap-2">
+            <button onclick="addToCart('${p.name}', ${p.price})" class="py-2 rounded-xl border border-rose-200 hover:bg-rose-50 text-rose-900 text-xs font-bold transition">
+              + Add to Bag
+            </button>
+            <button onclick="directWhatsApp('${p.name} (₹${p.price})')" class="py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition">
+              💬 WhatsApp
+            </button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function filterProducts(cat, btn) {
+      document.querySelectorAll(".filter-btn").forEach(b => {
+        b.classList.remove("bg-rose-900", "text-white");
+        b.classList.add("bg-white", "text-slate-700", "border", "border-slate-200");
+      });
+      btn.classList.remove("bg-white", "text-slate-700", "border", "border-slate-200");
+      btn.classList.add("bg-rose-900", "text-white");
+      renderProducts(cat);
+    }
+
+    function addToCart(name, price) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) existing.qty++;
+      else cart.push({ name, price, qty: 1 });
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function changeQty(idx, delta) {
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((sum, i) => sum + i.qty, 0);
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      document.getElementById("cart-count").innerText = count;
+      document.getElementById("cart-total").innerText = `₹${total}`;
+
+      const box = document.getElementById("cart-items");
+      if (cart.length === 0) {
+        box.innerHTML = `<p class="text-sm text-slate-400 text-center py-10">Aapka Gift Bag abhi khaali hai. Gallery se items add karein!</p>`;
+        return;
+      }
+      box.innerHTML = cart.map((item, idx) => `
+        <div class="flex items-center justify-between bg-stone-50 p-3 rounded-xl border border-slate-200">
+          <div>
+            <p class="font-bold text-xs sm:text-sm text-slate-900">${item.name}</p>
+            <p class="text-xs text-rose-800 font-bold">₹${item.price} × ${item.qty} = ₹${item.price * item.qty}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="changeQty(${idx}, -1)" class="w-7 h-7 rounded-lg bg-white border font-bold text-slate-700">-</button>
+            <span class="text-xs font-bold">${item.qty}</span>
+            <button onclick="changeQty(${idx}, 1)" class="w-7 h-7 rounded-lg bg-rose-900 text-white font-bold">+</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function toggleCart(forceOpen = null) {
+      const drawer = document.getElementById("cart-drawer");
+      if (forceOpen === true) drawer.classList.remove("hidden");
+      else drawer.classList.toggle("hidden");
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) return alert("Pehle kam se kam 1 gift item bag mein add karein!");
+      const lines = cart.map((i, idx) => `${idx + 1}. ${i.name} (x${i.qty}) - ₹${i.price * i.qty}`).join("\n");
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      const msg = `Hello *Welcome Fancy & Gift Shop* (Murlipura, Jaipur),\n\nMain yeh items order/book karna chahta hoon:\n\n${lines}\n\n*Estimated Total:* ₹${total}\nPlease availability confirm karein.`;
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    function directWhatsApp(item) {
+      const msg = `Hello *Welcome Fancy & Gift Shop* (Murlipura, Jaipur),\nMujhe *${item}* ke baare mein details aur latest photos chahiye.`;
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    function sendFinderEnquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById("finderName").value.trim();
+      const occasion = document.getElementById("finderFor").value;
+      const budget = document.getElementById("finderBudget").value;
+      const time = document.getElementById("finderTime").value;
+      const msg = `Hello *Welcome Fancy & Gift Shop*,\n\n*Smart Gift Finder Enquiry:*\n• *Name:* ${name}\n• *Occasion:* ${occasion}\n• *Budget:* ${budget}\n• *Needed:* ${time}\n\nPlease WhatsApp par options bhej dein.`;
+      window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
